@@ -1,3 +1,17 @@
+class Solution:
+    def factorial(self,n):
+
+        # Handling  Case
+        if n == 0:
+            return 1
+
+        else:
+            # Base Case
+            if n == 1:
+                return 1
+            # Induction
+            return n * self.factorial(n-1)
+
 def fact(n):
     if n == 1:
         return 1
