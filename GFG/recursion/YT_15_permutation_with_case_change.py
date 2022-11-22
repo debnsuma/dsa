@@ -1,5 +1,3 @@
-# Tower of Hanoi
-
 
 class Solution:
     count = 0
@@ -11,12 +9,12 @@ class Solution:
             self.count += 1
             return self.count
 
-        # When not considering the first char
-        self.substring(input_string[1:], output_string)
+        # When we are considering UPPER case of the first char
+        self.substring(input_string[1:], output_string + input_string[0].upper())
 
-        # When considering the first char
-        output_string = output_string + input_string[0]
-        self.substring(input_string[1:], output_string)
+
+        # When we are considering LOWER case of the first char
+        self.substring(input_string[1:], output_string + input_string[0].lower())
 
         return self.count
 
@@ -33,3 +31,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
