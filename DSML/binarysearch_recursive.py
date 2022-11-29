@@ -2,13 +2,13 @@ def recur_search(key, values, lower, upper):
 
     # base case
     # print(lower, upper)
-    if lower > upper:
-        return False
+    if lower >= upper:
+        return -1
 
     mid = (upper + lower)//2
 
     if values[mid] == key:
-        return True
+        return mid
     elif values[mid] > key:
         upper = mid - 1
         return recur_search(key, values, lower, upper)
@@ -17,27 +17,15 @@ def recur_search(key, values, lower, upper):
         return recur_search(key, values, lower, upper)
 
 
-def recur_search2(key, values, lower, upper):
+def solve(A, B):
+    count = recur_search(B, A, 0, len(A)) + 1
+    final_count = count
+    # print(A[count:])
+    if count > 0 and len(A[count:]) > 0:
+        print(A[count:])
+        count = recur_search(B, A[count:], 0, len(A[count:]))
+        final_count += count + 1
 
-    while lower <= upper:
+    return final_count
 
-        mid = (upper + lower)//2
-        if values[mid] == key:
-            return True
-        elif key < values[mid]:
-            upper = mid - 1
-        else:
-            lower = mid + 1
-
-    else:
-        return False
-
-
-
-
-key = 1
-values = [0,2,2,3]
-lower = 0
-upper = len(values)
-print(recur_search2(key, values, lower, upper-1))
-
+print(solve([1,1,1,1,3, 3],3))
