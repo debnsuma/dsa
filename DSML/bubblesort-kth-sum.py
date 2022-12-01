@@ -6,10 +6,13 @@ def bubble_sort(a):
             if a[j] > a[j+1]:
                 a[j + 1], a[j] = a[j], a[j + 1]
                 flag = True
-        if not flag:
-            break
+        # if not flag:
+        #     break
+#            print(a, a[::-1][0] + a[::-1][-1])
+            print(a, a[0] + a[-1])
 
-    return a
+
+    return a[::-1]
 
 
 #arr = "64 34 25 12 22 11 90".split()
