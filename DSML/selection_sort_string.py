@@ -1,4 +1,4 @@
-def selection_sort(arr):
+def selectionSort(arr):
 
     for i in range(len(arr)-1):
         min_idx = i
@@ -11,6 +11,7 @@ def selection_sort(arr):
 
     return arr
 
-arr = [5, 4, 3, 2, 1]
+arr = ['alpha', 'gamma', 'beta', 'delta']
+
 # arr = [1,1,1,1, -1, -1, -1]
-selection_sort(arr)
+selectionSort(arr)
