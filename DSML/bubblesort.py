@@ -1,4 +1,8 @@
 def bubble_sort(a):
+    '''
+    The bubble sort algorithm is not an efficient sorting algorithm,
+    as it provides a worst-case runtime complexity of O(n2), and a best-case complexity of O(n).
+    '''
     n = len(a)
     for i in range(n):
         flag = False
