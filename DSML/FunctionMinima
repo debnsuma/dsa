@@ -1,0 +1,19 @@
+def min_value(a,b,c,ll,ul):
+	# a,b,c -> Integers. Coefficients of quadratic equation ax^2 + bx + c = 0
+	# ll -> Integer. Lower limit of variable x
+	# ul -> Integer. Upper Limit of variable x
+
+	# return the Integer value of x for which the quadratic equation attains minimum value
+	result = float('inf')
+	# code starts here
+
+	for i in range(ll, ul+1):
+		derivative = 2 * a * i + (b)
+		temp_ans = abs(derivative)
+		# print(i, temp_ans)
+		if temp_ans < result:
+			result = temp_ans 
+			ans = i 
+
+	#code ends here
+	return ans
