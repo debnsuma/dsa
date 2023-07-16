@@ -1,0 +1,36 @@
+import string
+
+# Without two pointer 
+def uncompress(mystring):
+    final_string = ''
+    temp_num = 0
+    for i in range(len(mystring)):
+        if mystring[i] in string.digits:
+            temp_num = temp_num * 10 + int(mystring[i]) 
+            continue
+        
+        final_string = final_string + temp_num * mystring[i]
+        temp_num = 0
+            
+    return final_string
+            
+# Using two pointer 
+def uncompress(mystring):
+    
+    i, j = 0, 0
+    final_string = ''
+    
+    while j < len(mystring):
+        if mystring[j].isdigit():
+            j += 1
+            continue
+        else:
+
+            temp_num = int(mystring[i:j])
+            
+            final_string += mystring[j] * temp_num
+            
+            j += 1
+            i = j
+            
+    return final_string
